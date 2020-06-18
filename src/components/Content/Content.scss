@@ -9,11 +9,12 @@ body {
 }
 
 header {
+    z-index: 99;
     text-align: center;
     width: 100%;
     background-color: white;
     color: black;
-    border-bottom: 1px solid green;
+    box-shadow: 0px 0px 9px 3px rgba(41, 41, 41, 0.25);
 }
 
 header h1 {
@@ -23,20 +24,30 @@ header h1 {
     padding: 15px;
 }
 
-#content {
-    background-color: lightgray;
+#gridContent {
+    margin-top: 5px;
     margin-left: auto;
     margin-right: auto;
-    width: 60%;
+    width: 55%;
     display: grid;
     grid-template-columns: 33% 33% 33%;
-    grid-column-gap: 1em;
-    grid-row-gap: 1em;
+    grid-column-gap: 0.2em;
+    grid-row-gap: 0.2em;
 }
 
 .container {
     background-color: white;
     padding: 1em;
+
+    a {
+        color: black;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+        text-decoration-color: darkgreen;
+    }
 
     h3 {
         font-size: 22px;
@@ -44,11 +55,84 @@ header h1 {
 
     p {
         font-size: 14px;
+        padding-top: 5px;
     }
 
     img {
-        padding: 15px;
+        width: 100%;
+        padding-top: 15px;
         margin-left: auto;
         margin-right: auto;
+    }
+}
+
+#rowContent {
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-row-gap: 0.2em;
+}
+
+.rowDiv {
+    margin-left: auto;
+    margin-right: auto;
+    width: 55%;
+    background-color: white;
+
+    a {
+        color: black;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: darkgreen;
+    }
+
+    h3 {
+        width: 55%;
+        padding: 15px;
+        padding-top: 30px;
+        font-size: 32px;
+        float: left;
+    }
+
+    img {
+        float: right;
+        height: 150px;
+        padding: 15px;
+        padding-right: 5%;
+    }
+}
+
+#footer {
+    margin-left: auto;
+    margin-right: auto;
+    width: 55%;
+    font-size: 10px;
+    font-weight: lighter;
+
+    #copyright {
+        float: right;
+        padding: 30px;
+        padding-right: 50px;
+    }
+
+    #api{
+        float: left;
+        text-align: center;
+        padding-top: 30px;
+
+        a{
+            color: darkgreen;
+        }
+    }
+
+    #author {
+        float: left;
+        padding: 30px;
+        padding-left: 50px;
     }
 }

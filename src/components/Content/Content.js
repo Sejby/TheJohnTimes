@@ -10,11 +10,36 @@ export class Content extends Component {
     }
 
     componentDidMount() {
-        axios.get(`http://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=2e9c41a7f1ee46f09d700a555d77e80d`)
+        axios.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=2e9c41a7f1ee46f09d700a555d77e80d`)
             .then(res => this.setState({ posts: res.data.articles, isLoaded: true }));
     }
 
     render() {
+        var gridElements = [];
+        var rowElements = [];
+        for (var i = 0; i < 9; i++) {
+            gridElements.push(
+                <div className="container">
+                    <a href="#kokot">
+                        <h3>{this.state.isLoaded ? this.state.posts[i].title : ''}</h3>
+                        <p>{this.state.isLoaded ? this.state.posts[i].publishedAt : ''}</p>
+                        <img src={this.state.isLoaded ? this.state.posts[i].urlToImage : ''} alt="" />
+                    </a>
+                </div>
+            );
+        }
+
+        for (i = 10; i < 15; i++) {
+            rowElements.push(
+                <div className="rowDiv">
+                    <a href="#kokot">
+                        <h3>{this.state.isLoaded ? this.state.posts[i].title : ''}</h3>
+                        <img src={this.state.isLoaded ? this.state.posts[i].urlToImage : ''} alt="" />
+                    </a>
+                </div>
+            );
+        }
+
 
         if (this.state.isLoaded === true) {
             console.log(this.state.posts);
@@ -28,37 +53,18 @@ export class Content extends Component {
                     </nav>
                 </header>
 
-                <div id="content">
-                    <div class="container">
-                        <h3>{this.state.isLoaded ? this.state.posts[0].title : ''}</h3>
-                        <p>{this.state.isLoaded ? this.state.posts[0].publishedAt : ''}</p>
-                        <img src={this.state.isLoaded ? this.state.posts[0].urlToImage : ''} alt="" height='150px' />
-                    </div>
-                    <div class="container">
-                        <h3>{this.state.isLoaded ? this.state.posts[1].title : ''}</h3>
-                        <p>{this.state.isLoaded ? this.state.posts[1].publishedAt : ''}</p>
-                        <img src={this.state.isLoaded ? this.state.posts[1].urlToImage : ''} alt="" height='150px' />
-                    </div>
-                    <div class="container">
-                        <h3>{this.state.isLoaded ? this.state.posts[2].title : ''}</h3>
-                        <p>{this.state.isLoaded ? this.state.posts[2].publishedAt : ''}</p>
-                        <img src={this.state.isLoaded ? this.state.posts[2].urlToImage : ''} alt="" height='150px' />
-                    </div>
-                    <div class="container">
-                        <h3>{this.state.isLoaded ? this.state.posts[3].title : ''}</h3>
-                        <p>{this.state.isLoaded ? this.state.posts[3].publishedAt : ''}</p>
-                        <img src={this.state.isLoaded ? this.state.posts[3].urlToImage : ''} alt="" height='150px' />
-                    </div>
-                    <div class="container">
-                        <h3>{this.state.isLoaded ? this.state.posts[4].title : ''}</h3>
-                        <p>{this.state.isLoaded ? this.state.posts[4].publishedAt : ''}</p>
-                        <img src={this.state.isLoaded ? this.state.posts[4].urlToImage : ''} alt="" height='150px' />
-                    </div>
-                    <div class="container">
-                        <h3>{this.state.isLoaded ? this.state.posts[5].title : ''}</h3>
-                        <p>{this.state.isLoaded ? this.state.posts[5].publishedAt : ''}</p>
-                        <img src={this.state.isLoaded ? this.state.posts[5].urlToImage : ''} alt="" height='150px' />
-                    </div>
+                <div id="gridContent">
+                    {gridElements}
+                </div>
+
+                <div id='rowContent'>
+                    {rowElements}
+                </div>
+
+                <div id='footer'>
+                    <h2 id='author'>Coded by Jan Schejbal</h2>
+                    <h2 id='api'>API data provided by <a href="https://newsapi.org/" target='_blank' rel="noopener noreferrer">newsapi.org</a></h2>
+                    <h2 id='copyright'>© Copyright 2020</h2>
                 </div>
             </div>
 
