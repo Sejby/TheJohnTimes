@@ -9,6 +9,7 @@
   - SCSS
   - CSS Grid
 
+![Screenshot](screenshot.png)
 
 
 ## How to Install
