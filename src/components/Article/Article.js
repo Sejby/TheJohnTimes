@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import Header from '../Header/Header';
 import './Article.scss';
 import Footer from '../Footer/Footer';
@@ -10,9 +9,11 @@ export class Article extends Component {
         isLoaded: false
     }
 
-    componentDidMount() {
-        axios.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=2e9c41a7f1ee46f09d700a555d77e80d`)
-            .then(res => this.setState({ posts: res.data.articles, isLoaded: true }));
+    async componentDidMount() {
+        const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=2e9c41a7f1ee46f09d700a555d77e80d`;
+        const response = await fetch(url);
+        const data = await response.json();
+        this.setState({ posts: data.articles, isLoaded: true });
     }
 
     render() {
