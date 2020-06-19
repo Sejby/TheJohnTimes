@@ -1,0 +1,38 @@
+.articleContainer {
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    background-color: white;
+    position: relative;
+    padding: 1em;
+
+    .textWrapper {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .imageWrapper {
+        text-align: center;
+    }
+
+    img {
+        padding: 2em;
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 3em;
+        padding: 0.5em;
+    }
+
+    p {
+        padding-left: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+        padding: 1em;
+    }
+}

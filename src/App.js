@@ -19,10 +19,7 @@ function App() {
             <Header />
             <Content />
           </Route>
-          <Route path='/article'>
-            <Header />
-            <Article />
-          </Route>
+          <Route path={"/article/:id"} component={Article}></Route>
         </Switch>
       </Router>
     </div>
