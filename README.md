@@ -4,8 +4,10 @@
 
 ### Built With
 - JavaScript (React, Axios)
+- React-Router
  - HTML5
   - SCSS
+  - CSS Grid
 
 
 
