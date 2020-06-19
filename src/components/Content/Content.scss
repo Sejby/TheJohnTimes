@@ -28,15 +28,16 @@ header h1 {
     margin-top: 5px;
     margin-left: auto;
     margin-right: auto;
-    width: 55%;
+    width: 60%;
     display: grid;
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: repeat(3, auto);
     grid-column-gap: 0.2em;
     grid-row-gap: 0.2em;
 }
 
 .container {
     background-color: white;
+    position: relative;
     padding: 1em;
 
     a {
@@ -49,20 +50,33 @@ header h1 {
         text-decoration-color: darkgreen;
     }
 
+    .imageDiv {
+        img {
+            width: 250px;
+            height: auto;
+            position: absolute;
+            bottom: 1em;
+        }
+    }
+
     h3 {
         font-size: 22px;
+        
     }
 
     p {
         font-size: 14px;
         padding-top: 5px;
+        padding-bottom: 5px;
     }
+}
+
+.imageDiv {
+    height: 150px;
+    width: 150px;
 
     img {
-        width: 100%;
-        padding-top: 15px;
-        margin-left: auto;
-        margin-right: auto;
+        height: 100%;
     }
 }
 
@@ -79,7 +93,7 @@ header h1 {
 .rowDiv {
     margin-left: auto;
     margin-right: auto;
-    width: 55%;
+    width: 60%;
     background-color: white;
 
     a {
@@ -95,7 +109,7 @@ header h1 {
         width: 55%;
         padding: 15px;
         padding-top: 30px;
-        font-size: 32px;
+        font-size: 30px;
         float: left;
     }
 
@@ -120,12 +134,12 @@ header h1 {
         padding-right: 50px;
     }
 
-    #api{
+    #api {
         float: left;
         text-align: center;
         padding-top: 30px;
 
-        a{
+        a {
             color: darkgreen;
         }
     }

@@ -23,7 +23,9 @@ export class Content extends Component {
                     <a href="#kokot">
                         <h3>{this.state.isLoaded ? this.state.posts[i].title : ''}</h3>
                         <p>{this.state.isLoaded ? this.state.posts[i].publishedAt : ''}</p>
-                        <img src={this.state.isLoaded ? this.state.posts[i].urlToImage : ''} alt="" />
+                        <div className='imageDiv'>
+                            <img src={this.state.isLoaded ? this.state.posts[i].urlToImage : ''} alt="" />
+                        </div>
                     </a>
                 </div>
             );
