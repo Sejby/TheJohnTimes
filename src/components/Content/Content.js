@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './Content.scss';
+import { Link } from 'react-router-dom';
+
 
 export class Content extends Component {
 
@@ -20,13 +22,13 @@ export class Content extends Component {
         for (var i = 0; i < 9; i++) {
             gridElements.push(
                 <div className="container">
-                    <a href="#kokot">
+                    <Link to='/article'>
                         <h3>{this.state.isLoaded ? this.state.posts[i].title : ''}</h3>
                         <p>{this.state.isLoaded ? this.state.posts[i].publishedAt : ''}</p>
                         <div className='imageDiv'>
                             <img src={this.state.isLoaded ? this.state.posts[i].urlToImage : ''} alt="" />
                         </div>
-                    </a>
+                    </Link>
                 </div>
             );
         }
@@ -49,11 +51,6 @@ export class Content extends Component {
 
         return (
             <div>
-                <header>
-                    <nav>
-                        <h1>The John Times</h1>
-                    </nav>
-                </header>
 
                 <div id="gridContent">
                     {gridElements}
@@ -68,6 +65,7 @@ export class Content extends Component {
                     <h2 id='api'>API data provided by <a href="https://newsapi.org/" target='_blank' rel="noopener noreferrer">newsapi.org</a></h2>
                     <h2 id='copyright'>© Copyright 2020</h2>
                 </div>
+
             </div>
 
 
