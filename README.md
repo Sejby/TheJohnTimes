@@ -6,8 +6,9 @@
 [Link To Hosted Website](https://thejohntimes.netlify.app/)
 
 ### Built With
-- JavaScript (React, Axios)
+- React
 - React-Router
+- JavaScript
  - HTML5
   - SCSS
   - CSS Grid
