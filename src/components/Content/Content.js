@@ -31,7 +31,7 @@ export class Content extends Component {
                             <h3>{this.state.isLoaded ? this.state.posts[i].title : ''}</h3>
                         </Link>
 
-                        <p>{this.state.isLoaded ? this.state.posts[i].published_date.slice(0, 10).split('-').reverse().join('/') + ' ' + this.state.posts[i].published_date.slice(12, 19) + ' UTC' : ''}</p>
+                        <p>{this.state.isLoaded ? this.state.posts[i].published_date.slice(0, 10).split('-').reverse().join('/') + ' ' + this.state.posts[i].published_date.slice(12, 16) + ' UTC' : ''}</p>
                     </div>
                 </ div>
             );
