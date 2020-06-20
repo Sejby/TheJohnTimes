@@ -79,12 +79,25 @@ body {
         color: darkgreen;
     }
 
+    .textRowWrapper {
+        background-color: rgba($color: #000000, $alpha: 0.7);
+        padding: 1em;
+        height: 100%;
+        color: white;
+    }
+
     h3 {
         width: 55%;
         padding: 15px;
         padding-top: 30px;
         font-size: 42px;
         float: left;
+    }
+
+    h3:hover{
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-decoration-color: darkgreen;
     }
 
     p {
@@ -121,7 +134,7 @@ body {
         width: 90%;
 
         h3 {
-            width: 50%;
+            width: 60%;
             padding: 15px;
             padding-top: 30px;
             font-size: 24px;
@@ -140,19 +153,11 @@ body {
         width: 100%;
 
         h3 {
-            width: 40%;
+            width: 100%;
             padding: 15px;
             padding-top: 30px;
             font-size: 23px;
             float: left;
-        }
-    }
-}
-
-@media only screen and (max-width: 605px) {
-    #rowContent {
-        img {
-            height: 100px;
         }
     }
 }

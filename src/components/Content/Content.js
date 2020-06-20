@@ -38,12 +38,13 @@ export class Content extends Component {
         }
 
         for (i = 10; i < 15; i++) {
+            backgroundImage = this.state.isLoaded ? this.state.posts[i].multimedia[0].url : '';
             rowElements.push(
-                <div className="rowDiv" key={i}>
+                <div className="rowDiv" key={i} style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover' }}>
                     <Link to={`/article/${i}`}>
-                        <h3>{this.state.isLoaded ? this.state.posts[i].title : ''}</h3>
-                        <p>{this.state.isLoaded ? this.state.posts[i].published_date.slice(0, 10).split('-').reverse().join('/') + ' ' + this.state.posts[i].published_date.slice(12, 19) + ' UTC' : ''}</p>
-                        <img src={this.state.isLoaded ? this.state.posts[i].multimedia[0].url : ''} alt="" />
+                        <div className='textRowWrapper'>
+                            <h3>{this.state.isLoaded ? this.state.posts[i].title : ''}</h3>
+                        </div>
                     </Link>
                 </div>
             );
