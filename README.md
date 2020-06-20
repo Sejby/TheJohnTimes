@@ -13,12 +13,6 @@
   - SCSS
   - CSS Grid
 
-## Screenshots
-
-![Screenshot](screenshot1.png)
-
-![Screenshot](screenshot2.png)
-
 ## How to Run
 
 ### `npm install`
@@ -26,4 +20,14 @@
 ### `npm install node-sass`
 
 ### `npm start`
+
+## Screenshots
+
+![Screenshot](screenshot1.png)
+
+![Screenshot](screenshot2.png)
+
+![Screenshot](screenshot3.png)
+
+
 
