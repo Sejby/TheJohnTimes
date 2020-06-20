@@ -13,13 +13,13 @@
   - SCSS
   - CSS Grid
 
-## How to Run
+## Installation
 
-### `npm install`
+``` npm install ```
 
-### `npm install node-sass`
+``` npm install node-sass ```
 
-### `npm start`
+``` npm start ```
 
 ## Screenshots
 
