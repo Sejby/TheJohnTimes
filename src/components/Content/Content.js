@@ -12,10 +12,10 @@ export class Content extends Component {
     }
 
     async componentDidMount() {
-        const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=2e9c41a7f1ee46f09d700a555d77e80d`;
+        const url = `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=TGUIYM3nq6dbWb6IkeQUDl8g4EM44NLA`;
         const response = await fetch(url);
         const data = await response.json();
-        this.setState({ posts: data.articles, isLoaded: true });
+        this.setState({ posts: data.results, isLoaded: true });
     }
 
     render() {
@@ -26,9 +26,9 @@ export class Content extends Component {
                 <div className="container" key={i}>
                     <Link to={`/article/${i}`}>
                         <h3>{this.state.isLoaded ? this.state.posts[i].title : ''}</h3>
-                        <p>{this.state.isLoaded ? this.state.posts[i].publishedAt : ''}</p>
+                        <p>{this.state.isLoaded ? this.state.posts[i].published_date : ''}</p>
                         <div className='imageDiv'>
-                            <img src={this.state.isLoaded ? this.state.posts[i].urlToImage : ''} alt="" />
+                            <img src={this.state.isLoaded ? this.state.posts[i].multimedia[0].url : ''} alt="" />
                         </div>
                     </Link>
                 </div>
@@ -40,7 +40,7 @@ export class Content extends Component {
                 <div className="rowDiv" key={i}>
                     <Link to={`/article/${i}`}>
                         <h3>{this.state.isLoaded ? this.state.posts[i].title : ''}</h3>
-                        <img src={this.state.isLoaded ? this.state.posts[i].urlToImage : ''} alt="" />
+                        <img src={this.state.isLoaded ? this.state.posts[i].multimedia[0].url : ''} alt="" />
                     </Link>
                 </div>
             );
