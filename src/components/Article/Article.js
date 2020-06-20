@@ -27,13 +27,13 @@ export class Article extends Component {
                     <div className='textWrapper'>
                         <a href={this.state.isLoaded ? this.state.posts[i].url : ''} target='_blank' without rel="noopener noreferrer">
                             <h1>{this.state.isLoaded ? this.state.posts[i].title : ''}</h1>
-                            <p>{this.state.isLoaded ? this.state.posts[i].published_date : ''}</p>
+                            <p>{this.state.isLoaded ? this.state.posts[i].published_date.slice(0, 10).split('-').reverse().join('/') + ' ' + this.state.posts[i].published_date.slice(12, 19) + ' UTC' : ''}</p>
                             <div className='imageWrapper'><img src={this.state.isLoaded ? this.state.posts[i].multimedia[0].url : ''} alt="" /></div>
                             <h2>{this.state.isLoaded ? this.state.posts[i].abstract : ''}</h2>
                         </a>
                     </div>
                 </div>
-
+                
                 <Footer />
 
             </div>

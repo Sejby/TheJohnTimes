@@ -26,14 +26,13 @@ export class Content extends Component {
             backgroundImage = this.state.isLoaded ? this.state.posts[i].multimedia[0].url : '';
             gridElements.push(
                 <div className="container" key={i} style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover' }}>
-
                     <div className='textWrapper'>
                         <Link to={`/article/${i}`}>
                             <h3>{this.state.isLoaded ? this.state.posts[i].title : ''}</h3>
                         </Link>
-                        <p>{this.state.isLoaded ? this.state.posts[i].published_date : ''}</p>
-                    </div>
 
+                        <p>{this.state.isLoaded ? this.state.posts[i].published_date.slice(0, 10).split('-').reverse().join('/') + ' ' + this.state.posts[i].published_date.slice(12, 19) + ' UTC' : ''}</p>
+                    </div>
                 </ div>
             );
         }
@@ -43,6 +42,7 @@ export class Content extends Component {
                 <div className="rowDiv" key={i}>
                     <Link to={`/article/${i}`}>
                         <h3>{this.state.isLoaded ? this.state.posts[i].title : ''}</h3>
+                        <p>{this.state.isLoaded ? this.state.posts[i].published_date.slice(0, 10).split('-').reverse().join('/') + ' ' + this.state.posts[i].published_date.slice(12, 19) + ' UTC' : ''}</p>
                         <img src={this.state.isLoaded ? this.state.posts[i].multimedia[0].url : ''} alt="" />
                     </Link>
                 </div>
