@@ -30,7 +30,7 @@
 ![Screenshot](screenshot3.png)
 
 ## License
-  Distributed under the MIT License.
+  Distributed under the MIT License. Visit ``` LICENSE ``` for more information.
 
 
 
