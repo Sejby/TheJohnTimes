@@ -21,17 +21,20 @@ export class Content extends Component {
     render() {
         var gridElements = [];
         var rowElements = [];
+        var backgroundImage;
         for (var i = 0; i < 9; i++) {
+            backgroundImage = this.state.isLoaded ? this.state.posts[i].multimedia[0].url : '';
             gridElements.push(
-                <div className="container" key={i}>
-                    <Link to={`/article/${i}`}>
-                        <h3>{this.state.isLoaded ? this.state.posts[i].title : ''}</h3>
+                <div className="container" key={i} style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover' }}>
+
+                    <div className='textWrapper'>
+                        <Link to={`/article/${i}`}>
+                            <h3>{this.state.isLoaded ? this.state.posts[i].title : ''}</h3>
+                        </Link>
                         <p>{this.state.isLoaded ? this.state.posts[i].published_date : ''}</p>
-                        <div className='imageDiv'>
-                            <img src={this.state.isLoaded ? this.state.posts[i].multimedia[0].url : ''} alt="" />
-                        </div>
-                    </Link>
-                </div>
+                    </div>
+
+                </ div>
             );
         }
 

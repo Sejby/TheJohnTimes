@@ -1,6 +1,9 @@
 
 ## TheJohnTimes - News API App
- Built this project to practice and learn CSS Grids and its functions. Simple news website provided by NewsAPI.
+ Built this project to practice and learn CSS Grids and its functions. Content for website provided by NewYorkTimes API.
+
+## Live Site
+[Link To Hosted Website](https://thejohntimes.netlify.app/)
 
 ### Built With
 - JavaScript (React, Axios)
@@ -12,7 +15,7 @@
 ![Screenshot](screenshot.png)
 
 
-## How to Install
+## How to Run
 
 ### `npm install`
 
