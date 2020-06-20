@@ -13,8 +13,11 @@
   - SCSS
   - CSS Grid
 
-![Screenshot](screenshot.png)
+## Screenshots
 
+![Screenshot](screenshot1.png)
+
+![Screenshot](screenshot2.png)
 
 ## How to Run
 
