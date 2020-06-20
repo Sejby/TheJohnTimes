@@ -29,5 +29,8 @@
 
 ![Screenshot](screenshot3.png)
 
+## License
+  Distributed under the MIT License.
+
 
 
